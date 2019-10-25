@@ -217,23 +217,25 @@
 
 
 </script>
-<body>
+<body style="background-color:#0099CC">
+
 	<div style = "text-align:center;">
 		<canvas id="canvas" style="background:rgba(0, 200, 0, 1)">Your browser does not support the canvas element.</canvas>
 			<br>
 			<br><input type="button" name=starGame value="Start" onClick="startGame()" >
-			<input type="button" name=endGame value="Koniec" onClick="endGame();" >
-			<b>Nick:</b><input type="text"  id="nickTxt" value="" onClick="getNick();">
-			<b>Status: </b><input type="text" readonly id="serverConnStatusTxt" value="Niepołączony">
-			<b>Bomby: </b><input type="text" maxlength="2" size="2" readonly id="bombsTxt" value="">
-			<b>Czas wybuchu: </b><input maxlength="2" size="2" type="text"  type="number" min="0" step="1" id="bombExplodeTime" value="10"><b>s</b>
+			<input type="button" name=endGame value="Koniec" onClick="endGame();" ><br>
+			<b>Nick:</b><input type="text"  id="nickTxt" value="" onClick="getNick();"><br>
+			<b>Status: </b><input type="text" readonly id="serverConnStatusTxt" value="Niepołączony"><br>
+			<b>Bomby: </b><input type="text" maxlength="2" size="2" readonly id="bombsTxt" value=""><br>
+			<b>Czas wybuchu: </b><input maxlength="2" size="2" type="text"  type="number" min="0" step="1" id="bombExplodeTime" value="10"><b>s</b><br>
 			<br><br>
-			<b>Punkty: </b><input type="text" readonly id="pointsTxt" value="">
-			<b>Serwer: </b><input type="text" readonly id="serverAddresTxt" value="">
-			<b>Pozycja: </b><input type="text" readonly id="positionTxt" value="">
+			<b>Punkty: </b><input type="text" readonly id="pointsTxt" value=""><br>
+			<b>Serwer: </b><input type="text" readonly id="serverAddresTxt" value=""><br>
+			<b>Pozycja: </b><input type="text" readonly id="positionTxt" value=""><br>
 			<b>UID: </b><input type="text" readonly id="uidTxt" value="">
-		</div>
-	</body>
+	</div>
+
+</body>
 <script language="javascript" type="text/javascript">
 
 
