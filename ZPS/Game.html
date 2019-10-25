@@ -5,7 +5,7 @@
 <title>Game</title>
 
 <script language="javascript" type="text/javascript">
-  var serverAddres = "ws://46.41.137.21:8000/"; 
+  var serverAddres = "localhost:8000"; // ws://46.41.137.21:8000/
   var serverAddresTxt;
   var nickTxt;
   var serverConnStatusTxt;
@@ -318,9 +318,12 @@ function draw() {
   
   for (var i in playersObjArr) {
     ctx.beginPath();
-    ctx.font = "15px Arial";
-    ctx.arc(playersObjArr[i].x, playersObjArr[i].y, 8, 0, 2 * Math.PI);
+	ctx.fillStyle = "white";
+	ctx.strokeStyle = "black";
+    ctx.font = "15px Comic Sans";
+    ctx.arc(playersObjArr[i].x, playersObjArr[i].y, 5, 0, 2 * Math.PI);
     ctx.fillStyle = playersObjArr[i].playerColor;
+	ctx.fillText(playersObjArr[i].nick, playersObjArr[i].x + 10, playersObjArr[i].y);
     ctx.strokeText(playersObjArr[i].nick, playersObjArr[i].x + 10, playersObjArr[i].y);
     ctx.fill();
     ctx.stroke();
