@@ -5,7 +5,7 @@
 <title>Game</title>
 
 <script language="javascript" type="text/javascript">
-  var serverAddres = "localhost:8000"; // ws://46.41.137.21:8000/
+  var serverAddres = "ws://localhost:8000"; // ws://46.41.137.21:8000/
   var serverAddresTxt;
   var nickTxt;
   var serverConnStatusTxt;
@@ -109,7 +109,7 @@
       sendText(JSON.stringify(oJsonKilledMe))
       x_pos = -10;
       y_pos = -10;
-      alert("Zostales zabity")
+      alert("Zostales zabity");
     }
     draw();
   }
@@ -327,8 +327,9 @@ function draw() {
     ctx.fillStyle = playersObjArr[i].playerColor;
 	ctx.fillText(playersObjArr[i].nick, playersObjArr[i].x + 10, playersObjArr[i].y);
     ctx.strokeText(playersObjArr[i].nick, playersObjArr[i].x + 10, playersObjArr[i].y);
-    ctx.fill();
-    ctx.stroke();
+    ctx.stroke();   
+	ctx.fill();
+
   }
     
  }
