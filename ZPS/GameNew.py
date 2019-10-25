@@ -17,8 +17,8 @@ yRng = 20
 
 class GameServer(WebSocket):
 
-      boardSizeX = 800
-      boardSizeY = 600
+      boardSizeX = 400
+      boardSizeY = 400
       playerId = 0
       bombs = 5
       score = 0
