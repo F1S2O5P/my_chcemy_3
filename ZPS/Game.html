@@ -5,7 +5,7 @@
 <title>Game</title>
 
 <script language="javascript" type="text/javascript">
-  var serverAddres = "ws://46.41.137.21:8000/";
+  var serverAddres = "ws://46.41.137.21:8000/"; 
   var serverAddresTxt;
   var nickTxt;
   var serverConnStatusTxt;
@@ -224,12 +224,12 @@
 			<br><input type="button" name=starGame value="Start" onClick="startGame()" >
 			<input type="button" name=endGame value="Koniec" onClick="endGame();" >
 			<b>Nick:</b><input type="text"  id="nickTxt" value="" onClick="getNick();">
-			<b>Status połaczenia: </b><input type="text" readonly id="serverConnStatusTxt" value="Niepołączony">
-			<b>Ilość bomb: </b><input type="text" maxlength="2" size="2" readonly id="bombsTxt" value="">
+			<b>Status: </b><input type="text" readonly id="serverConnStatusTxt" value="Niepołączony">
+			<b>Bomby: </b><input type="text" maxlength="2" size="2" readonly id="bombsTxt" value="">
 			<b>Czas wybuchu: </b><input maxlength="2" size="2" type="text"  type="number" min="0" step="1" id="bombExplodeTime" value="10"><b>s</b>
 			<br><br>
 			<b>Punkty: </b><input type="text" readonly id="pointsTxt" value="">
-			<b>Server: </b><input type="text" readonly id="serverAddresTxt" value="">
+			<b>Serwer: </b><input type="text" readonly id="serverAddresTxt" value="">
 			<b>Pozycja: </b><input type="text" readonly id="positionTxt" value="">
 			<b>UID: </b><input type="text" readonly id="uidTxt" value="">
 		</div>
@@ -243,6 +243,7 @@ window.addEventListener("keydown",function(e) { keyPressed(e); e.preventDefault(
 var positionText = document.getElementById('positionTxt');
 var can = document.getElementById('canvas');
 var ctx = can.getContext('2d');
+var image = document.getElementById('source');
 
 can.height = c_height_init; 
 can.width = c_width_init;
@@ -304,10 +305,14 @@ function draw() {
 
   for (var b in bomsObjArr){
     if(bomsObjArr[b].bombsToExplode == true){
-      ctx.beginPath();
-      ctx.font = "30px Wingdings";
-      ctx.fillStyle = "red";
-      ctx.strokeText("M", bomsObjArr[b].x + 10, bomsObjArr[b].y);
+     ctx.beginPath();
+	 ctx.fillStyle = "black";
+     // ctx.font = "30px Wingdings";
+     // ctx.fillStyle = "red";
+     // ctx.strokeText("M", bomsObjArr[b].x + 10, bomsObjArr[b].y);
+	 ctx.arc(bomsObjArr[b].x + 10, bomsObjArr[b].y, 10, 0, 2 * Math.PI);
+	 ctx.fill();
+	 ctx.stroke(); 
     }
   }
   
